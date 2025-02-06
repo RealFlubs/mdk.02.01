@@ -1,0 +1,111 @@
+type — сообщает, как интерпретируется имя указанной команды;
+which — сообщает, какая программа будет выполнена;
+help — выводит справку по встроенным командам оболочки;
+man — выводит страницу справочного руководства с описанием команды;
+apropos — выводит список подходящих команд;
+info — выводит запись из справочного руководства Info с описанием команды;
+whatis — выводит краткоеописание команды;
+alias — создает псевдоним для команды.
+foo
+bin    i686-w64-mingw32  lib    libexec  sbin   src  x86_64-w64-mingw32
+games  include           lib64  local    share  tmp
+/home/311u14@nkti.local
+type foo
+foo — это псевдонимом для «cd /usr; ls; cd -»
+unalias foo
+type foo
+bash: type: foo: не найден
+type ls
+ls — это псевдонимом для «ls --color=auto»
+Глава 6
+ls -l /bin/usr > ls-output.txt
+ls: невозможно получить доступ к '/bin/usr': No such file or directory
+ls -l ls-output.txt
+-rw-r--r--. 1 311u14 пользователи домена 0 янв 31 11:24 ls-output.txt
+ls -l ls-output.txt
+-rw-r--r--. 1 311u14 пользователи домена 360942 янв 31 11:27 ls-output.txt
+
+Глава 9
+id
+uid=1000(codespace) gid=1000(codespace) groups=1000(codespace),106(ssh),107(docker),989(pipx),990(python),991(oryx),992(golang),993(sdkman),994(rvm),995(php),996(conda),997(nvs),998(nvm),999(hugo)
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ chmod
+chmod: missing operand
+Try 'chmod --help' for more information.
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ umask
+su — запускает командную оболочку от имени другого пользователя;
+sudo — выполняет команду от имени другого пользователя;
+chown — изменяет владельца файла;
+chgrp — изменяет группу файла;
+passwd — изменяет пароль пользователя.
+file /etc/shadow
+/etc/shadow: regular file, no read permission
+@RealFlubs ➜ /workspacesi/mdk.02.01 (main) $ ls -l lab2.txt
+-rw-rw-rw- 1 codespace root 9414 Feb  6 04:46 lab2.txt
+ chmod 600 foo.txt
+[me@linuxbox ~]$ ls -l lab2.txt
+-rw------- 1 me me 0 2018-03-06 14:52 foo.txt
+u Сокращенно от user (пользователь), означает владельца файла или каталога
+g Группа
+o Сокращенно от others (другие, остальные), означает весь остальной мир
+a Сокращенно от all (все); комбинация из всех трех символов: u, g и o
+u+x Добавляет право на выполнение, но только для владельца
+u-x Отнимает право на выполнение у владельца
++x Добавляет право на выполнение для владельца, группы и остального мира. Эквивалент записи a+x
+o-rw Отнимает право на чтение и запись у всех, кроме владельца
+и группы
+go=rw Устанавливает право на чтение и запись для всех, кроме владельца. Если прежде файл имел разрешение на выполнение для группы
+и всего мира, это право отнимается
+u+x,go=rx
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ umask
+0022
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ lab2.txt
+bash: lab2.txt: command not found
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ > lab2.txt
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ ls -l lab2.txt
+-rw-rw-rw- 1 codespace codespace 0 Feb  6 05:07 lab2.txt
+$ rm foo.txt
+[me@linuxbox ~]$ umask 0000
+[me@linuxbox ~]$ > lab2.txt
+[me@linuxbox ~]$ ls -l lab2.txt
+rm lab2.txt; umask 0022
+su -c 'ls -l /root/*'
+Пароль:
+-rw------- 1 root root 754 2007-08-11 03:19 /root/anaconda-ks.cfg
+/root/Mail:
+итого 0
+sudo backup_script
+Пароль:
+ sudo -l
+User me may run the following commands on this host:
+ (ALL) ALL
+chown [владелец][:[группа]] файл..
+bob Изменит принадлежность файла, назначив владельцем пользователя bob
+bob:users Изменит принадлежность файла, назначив владельцем пользователя bob
+и группу users
+:admins Изменит принадлежность файла, назначив группу admins
+bob: Изменит принадлежность файла, назначив владельцем пользователя bob
+и группу этого пользователя
+sudo cp myfile.txt ~tony
+Пароль:
+[janet@linuxbox ~]$ sudo ls -l ~tony/myfile.txt
+-rw-r--r-- 1 root root 8031 2018-03-20 14:30 /home/tony/myfile.txt
+[janet@linuxbox ~]$ sudo chown tony: ~tony/myfile.txt
+[janet@linuxbox ~]$ sudo ls -l ~tony/myfile.txt
+-rw-r--r-- 1 tony tony 8031 2018-03-20 14:30 /home/tony/myfile.txt
+ rm /usr/local/share/Music/test_file
+[bill@linuxbox ~]$ > /usr/local/share/Music/test_file
+[bill@linuxbox ~]$ mkdir /usr/local/share/Music/test_dir
+[bill@linuxbox ~]$ ls -l /usr/local/share/Music
+drwxrwsr-x 2 bill music 4096 2018-03-24 20:24 test_dir
+-rw-rw-r-- 1 bill music 0 2018-03-24 20:22 test_file
+passwd
+Смена пароля для me.
+$ passwd
+Смена пароля для me.
+(текущий) пароль UNIX:
+Введите новый пароль UNIX:
+BAD PASSWORD: is too similar to the old one
+Введите новый пароль UNIX:
+Выберите пароль большей длины
+Введите новый пароль UNIX:
+BAD PASSWORD: it is based on a dictionary word
