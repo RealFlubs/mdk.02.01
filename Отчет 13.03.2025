@@ -1,0 +1,286 @@
+u14@u14-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+u14@u14-VirtualBox:~$ docker search
+docker: 'docker search' requires 1 argument
+
+Usage:  docker search [OPTIONS] TERM
+
+Run 'docker search --help' for more information
+u14@u14-VirtualBox:~$ docker search --filter stars=50 mysql
+NAME                  DESCRIPTION                                     STARS     OFFICIAL
+mysql                 MySQL is a widely used, open-source relation…   15687     [OK]
+bitnami/mysql         Bitnami container image for MySQL               132       
+ubuntu/mysql          MySQL open source fast, stable, multi-thread…   67        
+mysql/mysql-server    Optimized MySQL Server Docker images. Create…   1026      
+mysql/mysql-cluster   Experimental MySQL Cluster Docker images. Cr…   100       
+u14@u14-VirtualBox:~$ docker pull
+docker: 'docker pull' requires 1 argument
+
+Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+Run 'docker pull --help' for more information
+u14@u14-VirtualBox:~$ images
+Команда «images» не найдена. Возможно, вы имели в виду:
+  команда 'imagen' из deb-пакета hevea (2.35-1build1)
+  команда 'imagej' из deb-пакета imagej (1.53o-1)
+Попробуйте: sudo apt install <имя_deb-пакета>
+u14@u14-VirtualBox:~$ docker search
+docker: 'docker search' requires 1 argument
+
+Usage:  docker search [OPTIONS] TERM
+
+Run 'docker search --help' for more information
+u14@u14-VirtualBox:~$ 
+u14@u14-VirtualBox:~$ 
+u14@u14-VirtualBox:~$ 
+u14@u14-VirtualBox:~$ 
+u14@u14-VirtualBox:~$ 
+u14@u14-VirtualBox:~$ 
+u14@u14-VirtualBox:~$ docker search --help
+Usage:  docker search [OPTIONS] TERM
+
+Search Docker Hub for images
+
+Options:
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Pretty-print search using a Go template
+      --limit int       Max number of search results
+      --no-trunc        Don't truncate output
+u14@u14-VirtualBox:~$ docker pull
+docker: 'docker pull' requires 1 argument
+
+Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+Run 'docker pull --help' for more information
+u14@u14-VirtualBox:~$ docker pull image:tag
+Error response from daemon: pull access denied for image, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+u14@u14-VirtualBox:~$ docker pull MySQL:latest
+invalid reference format: repository name (library/MySQL) must be lowercase
+u14@u14-VirtualBox:~$ docker pull MySQL:latest
+invalid reference format: repository name (library/MySQL) must be lowercase
+u14@u14-VirtualBox:~$ docker search ubuntu
+NAME                             DESCRIPTION                                     STARS     OFFICIAL
+ubuntu                           Ubuntu is a Debian-based Linux operating sys…   17496     [OK]
+ubuntu/squid                     Squid is a caching proxy for the Web. Long-t…   107       
+ubuntu/nginx                     Nginx, a high-performance reverse proxy & we…   127       
+ubuntu/cortex                    Cortex provides storage for Prometheus. Long…   4         
+ubuntu/kafka                     Apache Kafka, a distributed event streaming …   53        
+ubuntu/prometheus                Prometheus is a systems and service monitori…   70        
+ubuntu/apache2                   Apache, a secure & extensible open-source HT…   90        
+ubuntu/bind9                     BIND 9 is a very flexible, full-featured DNS…   102       
+ubuntu/zookeeper                 ZooKeeper maintains configuration informatio…   13        
+ubuntu/mysql                     MySQL open source fast, stable, multi-thread…   67        
+ubuntu/postgres                  PostgreSQL is an open source object-relation…   41        
+ubuntu/redis                     Redis, an open source key-value store. Long-…   23        
+ubuntu/jre                       Distroless Java runtime based on Ubuntu. Lon…   19        
+ubuntu/dotnet-aspnet             Chiselled Ubuntu runtime image for ASP.NET a…   25        
+ubuntu/grafana                   Grafana, a feature rich metrics dashboard & …   12        
+ubuntu/dotnet-deps               Chiselled Ubuntu for self-contained .NET & A…   16        
+ubuntu/cassandra                 Cassandra, an open source NoSQL distributed …   2         
+ubuntu/memcached                 Memcached, in-memory keyvalue store for smal…   5         
+ubuntu/python                    A chiselled Ubuntu rock with the Python runt…   20        
+ubuntu/prometheus-alertmanager   Alertmanager handles client alerts from Prom…   9         
+ubuntu/dotnet-runtime            Chiselled Ubuntu runtime image for .NET apps…   20        
+ubuntu/mlflow                    MLFlow: for managing the machine learning li…   5         
+ubuntu/telegraf                  Telegraf collects, processes, aggregates & w…   4         
+ubuntu/loki                      Grafana Loki, a log aggregation system like …   2         
+ubuntu/chiselled-jre             [MOVED TO ubuntu/jre] Chiselled JRE: distrol…   3         
+u14@u14-VirtualBox:~$ docker pull <archlinux>
+bash: синтаксическая ошибка рядом с неожиданным маркером «newline»
+u14@u14-VirtualBox:~$ docker pull <Name>
+bash: синтаксическая ошибка рядом с неожиданным маркером «newline»
+u14@u14-VirtualBox:~$ docker search  --filter stars =50 mysql
+invalid argument "stars" for "-f, --filter" flag: bad format of filter (expected name=value)
+
+Usage:  docker search [OPTIONS] TERM
+
+Run 'docker search --help' for more information
+u14@u14-VirtualBox:~$ docker pull ubuntu:18.04
+18.04: Pulling from library/ubuntu
+7c457f213c76: Pull complete 
+Digest: sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98
+Status: Downloaded newer image for ubuntu:18.04
+docker.io/library/ubuntu:18.04
+u14@u14-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+ubuntu       18.04     f9a80a55f492   21 months ago   63.2MB
+u14@u14-VirtualBox:~$ docker rmi f9a80a55f492
+Untagged: ubuntu:18.04
+Untagged: ubuntu@sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98
+Deleted: sha256:f9a80a55f492e823bf5d51f1bd5f87ea3eed1cb31788686aa99a2fb61a27af6a
+Deleted: sha256:548a79621a426b4eb077c926eabac5a8620c454fb230640253e1b44dc7dd7562
+u14@u14-VirtualBox:~$ docker rmi-f f9a80a55f492
+docker: unknown command: docker rmi-f
+
+Run 'docker --help' for more information
+u14@u14-VirtualBox:~$ /workspaces (main) $ docker images -a
+bash: синтаксическая ошибка рядом с неожиданным маркером «main»
+u14@u14-VirtualBox:~$ /workspaces (main) $ docker images-a
+bash: синтаксическая ошибка рядом с неожиданным маркером «main»
+u14@u14-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+u14@u14-VirtualBox:~$ docker run f9a80a55f492
+Unable to find image 'f9a80a55f492:latest' locally
+docker: Error response from daemon: pull access denied for f9a80a55f492, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+u14@u14-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+u14@u14-VirtualBox:~$ docker run -d f9a80a55f492
+Unable to find image 'f9a80a55f492:latest' locally
+docker: Error response from daemon: pull access denied for f9a80a55f492, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+u14@u14-VirtualBox:~$ docker run -it f9a80a55f492
+Unable to find image 'f9a80a55f492:latest' locally
+docker: Error response from daemon: pull access denied for f9a80a55f492, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+u14@u14-VirtualBox:~$ docker pull ubuntu:18.04
+18.04: Pulling from library/ubuntu
+7c457f213c76: Pull complete 
+Digest: sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98
+Status: Downloaded newer image for ubuntu:18.04
+docker.io/library/ubuntu:18.04
+u14@u14-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+ubuntu       18.04     f9a80a55f492   21 months ago   63.2MB
+u14@u14-VirtualBox:~$ docker run -d f9a80a55f492
+0bf3eeb201df7446f69efaa1c4581d92f38fdd0893c66b73230400ff2c030fdb
+u14@u14-VirtualBox:~$ 
+u14@u14-VirtualBox:~$ docker run -it f9a80a55f492
+root@9dc4b4bf9f21:/# pwd
+/
+root@9dc4b4bf9f21:/# uname -a
+Linux 9dc4b4bf9f21 6.8.0-52-generic #53~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 15 19:18:46 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+root@9dc4b4bf9f21:/# exit
+u14@u14-VirtualBox:~$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED              STATUS                          PORTS     NAMES
+9dc4b4bf9f21   f9a80a55f492   "/bin/bash"   About a minute ago   Exited (0) 19 seconds ago                 distracted_vaughan
+0bf3eeb201df   f9a80a55f492   "/bin/bash"   2 minutes ago        Exited (0) About a minute ago             wonderful_lumiere
+u14@u14-VirtualBox:~$ docker run -it archlinux
+Unable to find image 'archlinux:latest' locally
+latest: Pulling from library/archlinux
+51e5f99a23d6: Pull complete 
+cdb7f519a524: Pull complete 
+Digest: sha256:ae7491066c2f96861d7b442aef512974138c2004b8bf5b2aacda6b8fd9e112fe
+Status: Downloaded newer image for archlinux:latest
+[root@e37e3a09f22c /]# pwd
+/
+[root@e37e3a09f22c /]# uname -a
+Linux e37e3a09f22c 6.8.0-52-generic #53~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 15 19:18:46 UTC 2 x86_64 GNU/Linux
+[root@e37e3a09f22c /]# 
+exit
+u14@u14-VirtualBox:~$ docker run -it mongo
+Unable to find image 'mongo:latest' locally
+latest: Pulling from library/mongo
+5a7813e071bf: Pull complete 
+073d1958f55c: Pull complete 
+25459f85dd50: Pull complete 
+2a9aeb311ccd: Pull complete 
+e8760a65b52a: Pull complete 
+7c39481ab08c: Pull complete 
+f5f86bfbfe73: Pull complete 
+e47c58be646c: Pull complete 
+Digest: sha256:36f9c7390e7fdc734501d7797a88b9b661c1f0d1d2a64a1706dfb6ae3ffcef04
+Status: Downloaded newer image for mongo:latest
+u14@u14-VirtualBox:~$ docker
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default
+                           "/home/u14/.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info",
+                           "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "/home/u14/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "/home/u14/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "/home/u14/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+u14@u14-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+archlinux    latest    d74d4665b736   11 days ago     471MB
+mongo        latest    6551ff2e441b   2 weeks ago     887MB
+ubuntu       18.04     f9a80a55f492   21 months ago   63.2MB
+u14@u14-VirtualBox:~$ docker run -it f9a80a55f492
+root@e9ef5de8593a:/# pwd
+/
+root@e9ef5de8593a:/# uname -a
+Linux e9ef5de8593a 6.8.0-52-generic #53~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 15 19:18:46 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+root@e9ef5de8593a:/# exit
