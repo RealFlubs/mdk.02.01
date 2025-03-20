@@ -1,0 +1,818 @@
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
+daa230a97c92   ubuntu    "sh"      4 minutes ago   Up 4 minutes             mystifying_easley
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker stop daa230a97c92
+daa230a97c92
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker stop 6013ae1a63c2
+Error response from daemon: No such container: 6013ae1a63c2
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker stop 6013ae1a63c2
+Error response from daemon: No such container: 6013ae1a63c2
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker stop ba070bffd95e
+ba070bffd95e
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker commit -m "установка iproute2, iput
+ils-ping, dnsutils"-a "Pasha" ba070bffd95e ubu222.2
+"docker commit" requires at least 1 and at most 2 arguments.
+See 'docker commit --help'.
+
+Usage:  docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+Create a new image from a container's changes
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker commit -m " установка iproute2, ipu
+tils-ping, dnsutils "-a "Pasha" ba070bffd95e ubu220.2
+"docker commit" requires at least 1 and at most 2 arguments.
+See 'docker commit --help'.
+
+Usage:  docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+Create a new image from a container's changes
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker commit -m " установка iproute2, iputils-ping, dnsutils "-a "Pasha" ba070bffd95e ubu220.2
+"docker commit" requires at least 1 and at most 2 arguments.
+See 'docker commit --help'.
+
+Usage:  docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+Create a new image from a container's changes
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker commit -m " установка iproute2, iputils-ping, dnsutils "-a "Pasha" ba070bffd95e:ubu220.2
+Error response from daemon: No such container: Pasha
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker commit -m " установка iproute2, iputils-ping, dnsutils "-a "Pasha" ba070bffd95e:ubu220.2
+Error response from daemon: No such container: Pasha
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker commit -m " установка iproute2, iputils-ping, dnsutils "-a "Pasha" ba070bffd95e ubu220:2
+"docker commit" requires at least 1 and at most 2 arguments.
+See 'docker commit --help'.
+
+Usage:  docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+Create a new image from a container's changes
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker commit -m "установка iproute2, iput
+ils-ping, dnsutils" -a "Pasha" ba070bffd95e ubu22:0.2
+sha256:c9f5760c4f115e33b7e3bbc65af04f009d31dc66a062ea702a646b21b6167b6e
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ispect ubu22:0.2
+docker: 'ispect' is not a docker command.
+See 'docker --help'
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ispect Pasha
+docker: 'ispect' is not a docker command.
+See 'docker --help'
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ispect ubu22:0
+docker: 'ispect' is not a docker command.
+See 'docker --help'
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+ubu22        0.2       c9f5760c4f11   2 minutes ago   202MB
+ubuntu       latest    a04dc4851cbc   7 weeks ago     78.1MB
+ubuntu       20.04     6013ae1a63c2   5 months ago    72.8MB
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker history c9f5760c4f11
+IMAGE          CREATED         CREATED BY                                      SIZE      COMMENT
+c9f5760c4f11   3 minutes ago   /bin/bash                                       129MB     установка iproute2, iputils-ping, dnsutils
+6013ae1a63c2   5 months ago    /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B        
+<missing>      5 months ago    /bin/sh -c #(nop) ADD file:7486147a645d8835a…   72.8MB    
+<missing>      5 months ago    /bin/sh -c #(nop)  LABEL org.opencontainers.…   0B        
+<missing>      5 months ago    /bin/sh -c #(nop)  LABEL org.opencontainers.…   0B        
+<missing>      5 months ago    /bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH     0B        
+<missing>      5 months ago    /bin/sh -c #(nop)  ARG RELEASE
+[
+    {
+        "Id": "sha256:c9f5760c4f115e33b7e3bbc65af04f009d31dc66a062ea702a646b21b6167b6e",
+        "RepoTags": [
+            "ubu22:0.2"
+        ],
+        "RepoDigests": [],
+        "Parent": "sha256:6013ae1a63c2ee58a8949f03c6366a3ef6a2f386a7db27d86de2de965e9f450b",
+        "Comment": "установка iproute2, iputils-ping, dnsutils",
+        "Created": "2025-03-20T06:50:59.51941434Z",
+        "DockerVersion": "27.3.1-1",
+        "Author": "Pasha",
+        "Config": {
+            "Hostname": "ba070bffd95e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Image": "6013ae1a63c2",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 201733438,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/c50f58eaf53a7c25ba314524ade0ef4dfe1038f7826fcabd8c1be23660d5ce9d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/9629ad9fc307b82d39c3459f74239634c77421c34d5e33a0c2d95826aa0ff707/merged",
+                "UpperDir": "/var/lib/docker/overlay2/9629ad9fc307b82d39c3459f74239634c77421c34d5e33a0c2d95826aa0ff707/diff",
+                "WorkDir": "/var/lib/docker/overlay2/9629ad9fc307b82d39c3459f74239634c77421c34d5e33a0c2d95826aa0ff707/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:fffe76c64ef2dee2d80a8bb3ad13d65d596d04a45510b1956a976a69215dae92",
+                "sha256:a1d9329ba9eae8ae68e86665e3102212670982e4ee9143c290bf5487ab3f613b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2025-03-20T06:50:59.529863447Z"
+        }
+    }
+]
+[
+    {
+        "Id": "sha256:c9f5760c4f115e33b7e3bbc65af04f009d31dc66a062ea702a646b21b6167b6e",
+        "RepoTags": [
+            "ubu22:0.2"
+        ],
+        "RepoDigests": [],
+        "Parent": "sha256:6013ae1a63c2ee58a8949f03c6366a3ef6a2f386a7db27d86de2de965e9f450b",
+        "Comment": "установка iproute2, iputils-ping, dnsutils",
+        "Created": "2025-03-20T06:50:59.51941434Z",
+        "DockerVersion": "27.3.1-1",
+        "Author": "Pasha",
+        "Config": {
+            "Hostname": "ba070bffd95e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Image": "6013ae1a63c2",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 201733438,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/c50f58eaf53a7c25ba314524ade0ef4dfe1038f7826fcabd8c1be23660d5ce9d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/9629ad9fc307b82d39c3459f74239634c77421c34d5e33a0c2d95826aa0ff707/merged",
+                "UpperDir": "/var/lib/docker/overlay2/9629ad9fc307b82d39c3459f74239634c77421c34d5e33a0c2d95826aa0ff707/diff",
+                "WorkDir": "/var/lib/docker/overlay2/9629ad9fc307b82d39c3459f74239634c77421c34d5e33a0c2d95826aa0ff707/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:fffe76c64ef2dee2d80a8bb3ad13d65d596d04a45510b1956a976a69215dae92",
+                "sha256:a1d9329ba9eae8ae68e86665e3102212670982e4ee9143c290bf5487ab3f613b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2025-03-20T06:50:59.529863447Z"
+        }
+    }
+]
+ docker run -it ubu22:0.2
+root@d0ccfddd14c6:/# apt install mysql-client  
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common
+The following NEW packages will be installed:
+  mysql-client mysql-client-8.0 mysql-client-core-8.0 mysql-common
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5123 kB of archives.
+After this operation, 74.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client-core-8.0 amd64 8.0.41-0ubuntu0.20.04.1 [5085 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 mysql-common all 5.8+1.0.5ubuntu2 [7496 B]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client-8.0 amd64 8.0.41-0ubuntu0.20.04.1 [22.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 mysql-client all 8.0.41-0ubuntu0.20.04.1 [9368 B]
+Fetched 5123 kB in 1s (4786 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package mysql-client-core-8.0.
+(Reading database ... 6427 files and directories currently installed.)
+Preparing to unpack .../mysql-client-core-8.0_8.0.41-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.41-0ubuntu0.20.04.1) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../mysql-common_5.8+1.0.5ubuntu2_all.deb ...
+Unpacking mysql-common (5.8+1.0.5ubuntu2) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../mysql-client-8.0_8.0.41-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.41-0ubuntu0.20.04.1) ...
+Selecting previously unselected package mysql-client.
+Preparing to unpack .../mysql-client_8.0.41-0ubuntu0.20.04.1_all.deb ...
+Unpacking mysql-client (8.0.41-0ubuntu0.20.04.1) ...
+Setting up mysql-common (5.8+1.0.5ubuntu2) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mysql-client-core-8.0 (8.0.41-0ubuntu0.20.04.1) ...
+Setting up mysql-client-8.0 (8.0.41-0ubuntu0.20.04.1) ...
+Setting up mysql-client (8.0.41-0ubuntu0.20.04.1) ...
+root@d0ccfddd14c6:/# apt install postgresql-client
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libasn1-8-heimdal libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libkrb5-26-heimdal libldap-2.4-2
+  libldap-common libpq5 libreadline8 libroken18-heimdal libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libsqlite3-0 libwind0-heimdal netbase postgresql-client-12
+  postgresql-client-common readline-common
+Suggested packages:
+  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+  libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql postgresql-12
+  postgresql-doc-12 readline-doc
+The following NEW packages will be installed:
+  libasn1-8-heimdal libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libkrb5-26-heimdal libldap-2.4-2
+  libldap-common libpq5 libreadline8 libroken18-heimdal libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libsqlite3-0 libwind0-heimdal netbase postgresql-client
+  postgresql-client-12 postgresql-client-common readline-common
+0 upgraded, 22 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3068 kB of archives.
+After this operation, 10.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 readline-common all 8.0-4 [53.5 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 libreadline8 amd64 8.0-4 [131 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsqlite3-0 amd64 3.31.1-4ubuntu0.6 [549 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 netbase all 6.1 [13.1 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libroken18-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [42.5 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libasn1-8-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [181 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libheimbase1-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [30.4 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libhcrypto4-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [88.1 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libwind0-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [47.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libhx509-5-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [107 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkrb5-26-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [207 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libheimntlm0-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [15.1 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgssapi3-heimdal amd64 7.7.0+dfsg-1ubuntu1.4 [96.5 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2ubuntu0.1 [14.7 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2ubuntu0.1 [49.3 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libldap-common all 2.4.49+dfsg-2ubuntu1.10 [16.5 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libldap-2.4-2 amd64 2.4.49+dfsg-2ubuntu1.10 [155 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpq5 amd64 12.22-0ubuntu0.20.04.2 [118 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsasl2-modules amd64 2.1.27+dfsg-2ubuntu0.1 [48.8 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-client-common all 214ubuntu0.1 [28.2 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-client-12 amd64 12.22-0ubuntu0.20.04.2 [1073 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 postgresql-client all 12+214ubuntu0.1 [3940 B]
+Fetched 3068 kB in 1s (3152 kB/s)            
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package readline-common.
+(Reading database ... 6481 files and directories currently installed.)
+Preparing to unpack .../00-readline-common_8.0-4_all.deb ...
+Unpacking readline-common (8.0-4) ...
+Selecting previously unselected package libreadline8:amd64.
+Preparing to unpack .../01-libreadline8_8.0-4_amd64.deb ...
+Unpacking libreadline8:amd64 (8.0-4) ...
+Selecting previously unselected package libsqlite3-0:amd64.
+Preparing to unpack .../02-libsqlite3-0_3.31.1-4ubuntu0.6_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.31.1-4ubuntu0.6) ...
+Selecting previously unselected package netbase.
+Preparing to unpack .../03-netbase_6.1_all.deb ...
+Unpacking netbase (6.1) ...
+Selecting previously unselected package libroken18-heimdal:amd64.
+Preparing to unpack .../04-libroken18-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libroken18-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libasn1-8-heimdal:amd64.
+Preparing to unpack .../05-libasn1-8-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libasn1-8-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libheimbase1-heimdal:amd64.
+Preparing to unpack .../06-libheimbase1-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libheimbase1-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libhcrypto4-heimdal:amd64.
+Preparing to unpack .../07-libhcrypto4-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libhcrypto4-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libwind0-heimdal:amd64.
+Preparing to unpack .../08-libwind0-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libwind0-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libhx509-5-heimdal:amd64.
+Preparing to unpack .../09-libhx509-5-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libhx509-5-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libkrb5-26-heimdal:amd64.
+Preparing to unpack .../10-libkrb5-26-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libkrb5-26-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libheimntlm0-heimdal:amd64.
+Preparing to unpack .../11-libheimntlm0-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libheimntlm0-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libgssapi3-heimdal:amd64.
+Preparing to unpack .../12-libgssapi3-heimdal_7.7.0+dfsg-1ubuntu1.4_amd64.deb ...
+Unpacking libgssapi3-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../13-libsasl2-modules-db_2.1.27+dfsg-2ubuntu0.1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-2ubuntu0.1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../14-libsasl2-2_2.1.27+dfsg-2ubuntu0.1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27+dfsg-2ubuntu0.1) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../15-libldap-common_2.4.49+dfsg-2ubuntu1.10_all.deb ...
+Unpacking libldap-common (2.4.49+dfsg-2ubuntu1.10) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../16-libldap-2.4-2_2.4.49+dfsg-2ubuntu1.10_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.49+dfsg-2ubuntu1.10) ...
+Selecting previously unselected package libpq5:amd64.
+Preparing to unpack .../17-libpq5_12.22-0ubuntu0.20.04.2_amd64.deb ...
+Unpacking libpq5:amd64 (12.22-0ubuntu0.20.04.2) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../18-libsasl2-modules_2.1.27+dfsg-2ubuntu0.1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.27+dfsg-2ubuntu0.1) ...
+Selecting previously unselected package postgresql-client-common.
+Preparing to unpack .../19-postgresql-client-common_214ubuntu0.1_all.deb ...
+Unpacking postgresql-client-common (214ubuntu0.1) ...
+Selecting previously unselected package postgresql-client-12.
+Preparing to unpack .../20-postgresql-client-12_12.22-0ubuntu0.20.04.2_amd64.deb ...
+Unpacking postgresql-client-12 (12.22-0ubuntu0.20.04.2) ...
+Selecting previously unselected package postgresql-client.
+Preparing to unpack .../21-postgresql-client_12+214ubuntu0.1_all.deb ...
+Unpacking postgresql-client (12+214ubuntu0.1) ...
+Setting up libsqlite3-0:amd64 (3.31.1-4ubuntu0.6) ...
+Setting up libsasl2-modules:amd64 (2.1.27+dfsg-2ubuntu0.1) ...
+Setting up libldap-common (2.4.49+dfsg-2ubuntu1.10) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-2ubuntu0.1) ...
+Setting up libsasl2-2:amd64 (2.1.27+dfsg-2ubuntu0.1) ...
+Setting up libroken18-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up netbase (6.1) ...
+Setting up readline-common (8.0-4) ...
+Setting up libheimbase1-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up postgresql-client-common (214ubuntu0.1) ...
+Setting up libasn1-8-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up libreadline8:amd64 (8.0-4) ...
+Setting up libhcrypto4-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up libwind0-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up libhx509-5-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up libkrb5-26-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up libheimntlm0-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up libgssapi3-heimdal:amd64 (7.7.0+dfsg-1ubuntu1.4) ...
+Setting up libldap-2.4-2:amd64 (2.4.49+dfsg-2ubuntu1.10) ...
+Setting up libpq5:amd64 (12.22-0ubuntu0.20.04.2) ...
+Setting up postgresql-client-12 (12.22-0ubuntu0.20.04.2) ...
+update-alternatives: using /usr/share/postgresql/12/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up postgresql-client (12+214ubuntu0.1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.17) .
+t?
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ apt install iproute2
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+ubuntu       latest    a04dc4851cbc   7 weeks ago    78.1MB
+ubuntu       20.04     6013ae1a63c2   5 months ago   72.8MB
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -it 6013ae1a63c2
+root@ba070bffd95e:/# apt update
+Get:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [4638 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [45.5 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1595 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4756 kB]
+Get:13 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [42.0 kB]
+Get:14 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [4441 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [55.2 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [28.6 kB]
+Get:17 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4269 kB]
+Get:18 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1301 kB]
+Fetched 34.6 MB in 2s (17.0 MB/s)                          
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+4 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@ba070bffd95e:/# apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  libc-bin libc6 libgnutls30 libtasn1-6
+4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 4223 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc6 amd64 2.31-0ubuntu9.17 [2721 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc-bin amd64 2.31-0ubuntu9.17 [634 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtasn1-6 amd64 4.16.0-2ubuntu0.1 [38.6 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgnutls30 amd64 3.6.13-2ubuntu1.12 [829 kB]
+Fetched 4223 kB in 1s (4496 kB/s)      
+debconf: delaying package configuration, since apt-utils is not installed
+(Reading database ... 4124 files and directories currently installed.)
+Preparing to unpack .../libc6_2.31-0ubuntu9.17_amd64.deb ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Unpacking libc6:amd64 (2.31-0ubuntu9.17) over (2.31-0ubuntu9.16) ...
+Setting up libc6:amd64 (2.31-0ubuntu9.17) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+(Reading database ... 4124 files and directories currently installed.)
+Preparing to unpack .../libc-bin_2.31-0ubuntu9.17_amd64.deb ...
+Unpacking libc-bin (2.31-0ubuntu9.17) over (2.31-0ubuntu9.16) ...
+Setting up libc-bin (2.31-0ubuntu9.17) ...
+(Reading database ... 4124 files and directories currently installed.)
+Preparing to unpack .../libtasn1-6_4.16.0-2ubuntu0.1_amd64.deb ...
+Unpacking libtasn1-6:amd64 (4.16.0-2ubuntu0.1) over (4.16.0-2) ...
+Setting up libtasn1-6:amd64 (4.16.0-2ubuntu0.1) ...
+(Reading database ... 4124 files and directories currently installed.)
+Preparing to unpack .../libgnutls30_3.6.13-2ubuntu1.12_amd64.deb ...
+Unpacking libgnutls30:amd64 (3.6.13-2ubuntu1.12) over (3.6.13-2ubuntu1.11) ...
+Setting up libgnutls30:amd64 (3.6.13-2ubuntu1.12) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.17) ...
+root@ba070bffd95e:/# apt install iproute2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libatm1 libbsd0 libcap2 libcap2-bin libelf1 libmnl0 libpam-cap libxtables12
+Suggested packages:
+  iproute2-doc
+The following NEW packages will be installed:
+  iproute2 libatm1 libbsd0 libcap2 libcap2-bin libelf1 libmnl0 libpam-cap
+  libxtables12
+0 upgraded, 9 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1060 kB of archives.
+After this operation, 3682 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libbsd0 amd64 0.10.0-1 [45.4 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcap2 amd64 1:2.32-1ubuntu0.2 [15.7 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libelf1 amd64 0.176-1.1ubuntu0.1 [44.2 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 libmnl0 amd64 1.0.4-2 [12.3 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxtables12 amd64 1.8.4-3ubuntu2.1 [28.7 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcap2-bin amd64 1:2.32-1ubuntu0.2 [26.2 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 iproute2 amd64 5.5.0-1ubuntu1 [858 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 libatm1 amd64 1:2.5.1-4 [21.8 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpam-cap amd64 1:2.32-1ubuntu0.2 [8376 B]
+Fetched 1060 kB in 1s (1366 kB/s)   
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libbsd0:amd64.
+(Reading database ... 4124 files and directories currently installed.)
+Preparing to unpack .../0-libbsd0_0.10.0-1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.10.0-1) ...
+Selecting previously unselected package libcap2:amd64.
+Preparing to unpack .../1-libcap2_1%3a2.32-1ubuntu0.2_amd64.deb ...
+Unpacking libcap2:amd64 (1:2.32-1ubuntu0.2) ...
+Selecting previously unselected package libelf1:amd64.
+Preparing to unpack .../2-libelf1_0.176-1.1ubuntu0.1_amd64.deb ...
+Unpacking libelf1:amd64 (0.176-1.1ubuntu0.1) ...
+Selecting previously unselected package libmnl0:amd64.
+Preparing to unpack .../3-libmnl0_1.0.4-2_amd64.deb ...
+Unpacking libmnl0:amd64 (1.0.4-2) ...
+Selecting previously unselected package libxtables12:amd64.
+Preparing to unpack .../4-libxtables12_1.8.4-3ubuntu2.1_amd64.deb ...
+Unpacking libxtables12:amd64 (1.8.4-3ubuntu2.1) ...
+Selecting previously unselected package libcap2-bin.
+Preparing to unpack .../5-libcap2-bin_1%3a2.32-1ubuntu0.2_amd64.deb ...
+Unpacking libcap2-bin (1:2.32-1ubuntu0.2) ...
+Selecting previously unselected package iproute2.
+Preparing to unpack .../6-iproute2_5.5.0-1ubuntu1_amd64.deb ...
+Unpacking iproute2 (5.5.0-1ubuntu1) ...
+Selecting previously unselected package libatm1:amd64.
+Preparing to unpack .../7-libatm1_1%3a2.5.1-4_amd64.deb ...
+Unpacking libatm1:amd64 (1:2.5.1-4) ...
+Selecting previously unselected package libpam-cap:amd64.
+Preparing to unpack .../8-libpam-cap_1%3a2.32-1ubuntu0.2_amd64.deb ...
+Unpacking libpam-cap:amd64 (1:2.32-1ubuntu0.2) ...
+Setting up libatm1:amd64 (1:2.5.1-4) ...
+Setting up libcap2:amd64 (1:2.32-1ubuntu0.2) ...
+Setting up libcap2-bin (1:2.32-1ubuntu0.2) ...
+Setting up libmnl0:amd64 (1.0.4-2) ...
+Setting up libxtables12:amd64 (1.8.4-3ubuntu2.1) ...
+Setting up libbsd0:amd64 (0.10.0-1) ...
+Setting up libelf1:amd64 (0.176-1.1ubuntu0.1) ...
+Setting up libpam-cap:amd64 (1:2.32-1ubuntu0.2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up iproute2 (5.5.0-1ubuntu1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Processing triggers for libc-bin (2.31-0ubuntu9.17) ...
+root@ba070bffd95e:/# apt install iputils-ping
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  iputils-ping
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 40.0 kB of archives.
+After this operation, 109 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 iputils-ping amd64 3:20190709-3ubuntu1 [40.0 kB]
+Fetched 40.0 kB in 0s (131 kB/s)        
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package iputils-ping.
+(Reading database ... 4342 files and directories currently installed.)
+Preparing to unpack .../iputils-ping_3%3a20190709-3ubuntu1_amd64.deb ...
+Unpacking iputils-ping (3:20190709-3ubuntu1) ...
+Setting up iputils-ping (3:20190709-3ubuntu1) ...
+root@ba070bffd95e:/# apt install dnsutils
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  bind9-dnsutils bind9-host bind9-libs krb5-locales libedit2 libgssapi-krb5-2
+  libicu66 libjson-c4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblmdb0
+  libmaxminddb0 libnghttp2-14 libssl1.1 libuv1 libxml2 tzdata
+Suggested packages:
+  krb5-doc krb5-user mmdb-bin
+The following NEW packages will be installed:
+  bind9-dnsutils bind9-host bind9-libs dnsutils krb5-locales libedit2
+  libgssapi-krb5-2 libicu66 libjson-c4 libk5crypto3 libkeyutils1 libkrb5-3
+  libkrb5support0 liblmdb0 libmaxminddb0 libnghttp2-14 libssl1.1 libuv1 libxml2
+  tzdata
+0 upgraded, 20 newly installed, 0 to remove and 0 not upgraded.
+Need to get 13.1 MB of archives.
+After this operation, 51.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 tzdata all 2024b-0ubuntu0.20.04.1 [299 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libicu66 amd64 66.1-2ubuntu2.1 [8515 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libjson-c4 amd64 0.13.1+dfsg-7ubuntu0.3 [29.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libssl1.1 amd64 1.1.1f-1ubuntu2.24 [1323 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxml2 amd64 2.9.10+dfsg-5ubuntu0.20.04.9 [641 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkrb5support0 amd64 1.17-6ubuntu4.9 [31.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libk5crypto3 amd64 1.17-6ubuntu4.9 [80.5 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkeyutils1 amd64 1.6-6ubuntu1.1 [10.3 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkrb5-3 amd64 1.17-6ubuntu4.9 [330 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgssapi-krb5-2 amd64 1.17-6ubuntu4.9 [121 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/main amd64 liblmdb0 amd64 0.9.24-1 [44.6 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libmaxminddb0 amd64 1.4.2-0ubuntu1.20.04.1 [26.2 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnghttp2-14 amd64 1.40.0-1ubuntu0.3 [79.9 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libuv1 amd64 1.34.2-1ubuntu1.5 [80.9 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-libs amd64 1:9.18.30-0ubuntu0.20.04.2 [1155 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-host amd64 1:9.18.30-0ubuntu0.20.04.2 [47.8 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal/main amd64 libedit2 amd64 3.1-20191231-1 [87.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-dnsutils amd64 1:9.18.30-0ubuntu0.20.04.2 [142 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 krb5-locales all 1.17-6ubuntu4.9 [11.8 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 dnsutils all 1:9.18.30-0ubuntu0.20.04.2 [4056 B]
+Fetched 13.1 MB in 1s (10.7 MB/s)         
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package tzdata.
+(Reading database ... 4352 files and directories currently installed.)
+Preparing to unpack .../00-tzdata_2024b-0ubuntu0.20.04.1_all.deb ...
+Unpacking tzdata (2024b-0ubuntu0.20.04.1) ...
+Selecting previously unselected package libicu66:amd64.
+Preparing to unpack .../01-libicu66_66.1-2ubuntu2.1_amd64.deb ...
+Unpacking libicu66:amd64 (66.1-2ubuntu2.1) ...
+Selecting previously unselected package libjson-c4:amd64.
+Preparing to unpack .../02-libjson-c4_0.13.1+dfsg-7ubuntu0.3_amd64.deb ...
+Unpacking libjson-c4:amd64 (0.13.1+dfsg-7ubuntu0.3) ...
+Selecting previously unselected package libssl1.1:amd64.
+Preparing to unpack .../03-libssl1.1_1.1.1f-1ubuntu2.24_amd64.deb ...
+Unpacking libssl1.1:amd64 (1.1.1f-1ubuntu2.24) ...
+Selecting previously unselected package libxml2:amd64.
+Preparing to unpack .../04-libxml2_2.9.10+dfsg-5ubuntu0.20.04.9_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.10+dfsg-5ubuntu0.20.04.9) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../05-libkrb5support0_1.17-6ubuntu4.9_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.17-6ubuntu4.9) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../06-libk5crypto3_1.17-6ubuntu4.9_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.17-6ubuntu4.9) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../07-libkeyutils1_1.6-6ubuntu1.1_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6-6ubuntu1.1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../08-libkrb5-3_1.17-6ubuntu4.9_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.17-6ubuntu4.9) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../09-libgssapi-krb5-2_1.17-6ubuntu4.9_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.17-6ubuntu4.9) ...
+Selecting previously unselected package liblmdb0:amd64.
+Preparing to unpack .../10-liblmdb0_0.9.24-1_amd64.deb ...
+Unpacking liblmdb0:amd64 (0.9.24-1) ...
+Selecting previously unselected package libmaxminddb0:amd64.
+Preparing to unpack .../11-libmaxminddb0_1.4.2-0ubuntu1.20.04.1_amd64.deb ...
+Unpacking libmaxminddb0:amd64 (1.4.2-0ubuntu1.20.04.1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../12-libnghttp2-14_1.40.0-1ubuntu0.3_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.40.0-1ubuntu0.3) ...
+Selecting previously unselected package libuv1:amd64.
+Preparing to unpack .../13-libuv1_1.34.2-1ubuntu1.5_amd64.deb ...
+Unpacking libuv1:amd64 (1.34.2-1ubuntu1.5) ...
+Selecting previously unselected package bind9-libs:amd64.
+Preparing to unpack .../14-bind9-libs_1%3a9.18.30-0ubuntu0.20.04.2_amd64.deb ...
+Unpacking bind9-libs:amd64 (1:9.18.30-0ubuntu0.20.04.2) ...
+Selecting previously unselected package bind9-host.
+Preparing to unpack .../15-bind9-host_1%3a9.18.30-0ubuntu0.20.04.2_amd64.deb ...
+Unpacking bind9-host (1:9.18.30-0ubuntu0.20.04.2) ...
+Selecting previously unselected package libedit2:amd64.
+Preparing to unpack .../16-libedit2_3.1-20191231-1_amd64.deb ...
+Unpacking libedit2:amd64 (3.1-20191231-1) ...
+Selecting previously unselected package bind9-dnsutils.
+Preparing to unpack .../17-bind9-dnsutils_1%3a9.18.30-0ubuntu0.20.04.2_amd64.deb ...
+Unpacking bind9-dnsutils (1:9.18.30-0ubuntu0.20.04.2) ...
+Selecting previously unselected package krb5-locales.
+Preparing to unpack .../18-krb5-locales_1.17-6ubuntu4.9_all.deb ...
+Unpacking krb5-locales (1.17-6ubuntu4.9) ...
+Selecting previously unselected package dnsutils.
+Preparing to unpack .../19-dnsutils_1%3a9.18.30-0ubuntu0.20.04.2_all.deb ...
+Unpacking dnsutils (1:9.18.30-0ubuntu0.20.04.2) ...
+Setting up liblmdb0:amd64 (0.9.24-1) ...
+Setting up libkeyutils1:amd64 (1.6-6ubuntu1.1) ...
+Setting up libssl1.1:amd64 (1.1.1f-1ubuntu2.24) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libmaxminddb0:amd64 (1.4.2-0ubuntu1.20.04.1) ...
+Setting up libedit2:amd64 (3.1-20191231-1) ...
+Setting up libnghttp2-14:amd64 (1.40.0-1ubuntu0.3) ...
+Setting up krb5-locales (1.17-6ubuntu4.9) ...
+Setting up libkrb5support0:amd64 (1.17-6ubuntu4.9) ...
+Setting up tzdata (2024b-0ubuntu0.20.04.1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Configuring tzdata
+------------------
+
+Please select the geographic area in which you live. Subsequent configuration
+questions will narrow this down by presenting a list of cities, representing the time
+zones in which they are located.
+
+  1. Africa      4. Australia  7. Atlantic  10. Pacific  13. Etc
+  2. America     5. Arctic     8. Europe    11. SystemV  14. Legacy
+  3. Antarctica  6. Asia       9. Indian    12. US
+Geographic area: 7
+
+Please select the city or region corresponding to your time zone.
+
+  1. Azores   4. Cape_Verde  7. Madeira        10. St_Helena
+  2. Bermuda  5. Faroe       8. Reykjavik      11. Stanley
+  3. Canary   6. Jan_Mayen   9. South_Georgia
+Time zone: 4
+
+
+Current default time zone: 'Atlantic/Cape_Verde'
+Local time is now:      Thu Mar 20 05:23:34 -01 2025.
+Universal Time is now:  Thu Mar 20 06:23:34 UTC 2025.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up libuv1:amd64 (1.34.2-1ubuntu1.5) ...
+Setting up libk5crypto3:amd64 (1.17-6ubuntu4.9) ...
+Setting up libkrb5-3:amd64 (1.17-6ubuntu4.9) ...
+Setting up libjson-c4:amd64 (0.13.1+dfsg-7ubuntu0.3) ...
+Setting up libicu66:amd64 (66.1-2ubuntu2.1) ...
+Setting up libgssapi-krb5-2:amd64 (1.17-6ubuntu4.9) ...
+Setting up libxml2:amd64 (2.9.10+dfsg-5ubuntu0.20.04.9) ...
+Setting up bind9-libs:amd64 (1:9.18.30-0ubuntu0.20.04.2) ...
+Setting up bind9-host (1:9.18.30-0ubuntu0.20.04.2) ...
+Setting up bind9-dnsutils (1:9.18.30-0ubuntu0.20.04.2) ...
+Setting up dnsutils (1:9.18.30-0ubuntu0.20.04.2) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.17) ...
+root@ba070bffd95e:/# exit
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker pull masql:20.04
+Error response from daemon: pull access denied for masql, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+ubu22        0.2       c9f5760c4f11   7 minutes ago   202MB
+ubuntu       latest    a04dc4851cbc   7 weeks ago     78.1MB
+ubuntu       20.04     6013ae1a63c2   5 months ago    72.8MB
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker pull mysql
+Using default tag: latest
+latest: Pulling from library/mysql
+804bb8ae89de: Pull complete 
+1b515e7ceb69: Pull complete 
+eaa11c0a9f08: Pull complete 
+8d18181893b8: Pull complete 
+e0a910cc8604: Pull complete 
+bc0c792ca096: Pull complete 
+8d73d2a73425: Pull complete 
+4a7e00d873b9: Pull complete 
+27a2553d6a80: Pull complete 
+69e76254f502: Pull complete 
+Digest: sha256:9b9d0aab4860798acff13d2a0ece3bc26639fe18b83fa5cd3e3d0e16b3ed05dd
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker pull postgresql
+Using default tag: latest
+Error response from daemon: pull access denied for postgresql, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ apt install mysql-client
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+ubu22        0.2       c9f5760c4f11   12 minutes ago   202MB
+ubuntu       latest    a04dc4851cbc   7 weeks ago      78.1MB
+mysql        latest    fa262c3a6564   8 weeks ago      797MB
+ubuntu       20.04     6013ae1a63c2   5 months ago     72.8MB
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -it fa262c3a6564
+2025-03-20 07:05:48+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.2.0-1.el9 started.
+2025-03-20 07:05:48+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2025-03-20 07:05:48+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.2.0-1.el9 started.
+2025-03-20 07:05:48+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
+    You need to specify one of the following as an environment variable:
+    - MYSQL_ROOT_PASSWORD
+    - MYSQL_ALLOW_EMPTY_PASSWORD
+    - MYSQL_RANDOM_ROOT_PASSWORD
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -it 6013ae1a63c2
+root@b26c83c8efcd:/# apt install mysql-client
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package mysql-client
+root@b26c83c8efcd:/# exit
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker pull postgres
+Using default tag: latest
+latest: Pulling from library/postgres
+6e909acdb790: Pull complete 
+fec99121872b: Pull complete 
+133acbc970df: Pull complete 
+e02d97322fc6: Pull complete 
+db9643c6baf3: Pull complete 
+9bcedd9434e7: Pull complete 
+fc8982ec96d9: Pull complete 
+1824bd6b75d7: Pull complete 
+fbad2bf2d5e6: Pull complete 
+221788d72606: Pull complete 
+e5f43b682bc0: Pull complete 
+e7a2d9e24ab0: Pull complete 
+a96cb29b0d13: Pull complete 
+140970538145: Pull complete 
+Digest: sha256:7f29c02ba9eeff4de9a9f414d803faa0e6fe5e8d15ebe217e3e418c82e652b35
+Status: Downloaded newer image for postgres:latest
+docker.io/library/postgres:latest
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -d mysql
+9695cb5e9f16568d43e806fe0d4a90a0ab64ab25dc6ad4e92ae2d4c6a8839f70
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+ubu22        0.2       c9f5760c4f11   28 minutes ago   202MB
+postgres     latest    76e3e031d245   3 weeks ago      438MB
+ubuntu       latest    a04dc4851cbc   7 weeks ago      78.1MB
+mysql        latest    fa262c3a6564   8 weeks ago      797MB
+ubuntu       20.04     6013ae1a63c2   5 months ago     72.8MB
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED              STATUS                           PORTS     NAMES
+9695cb5e9f16   mysql          "docker-entrypoint.s…"   About a minute ago   Exited (1) About a minute ago              vigilant_bose
+d0ccfddd14c6   ubu22:0.2      "/bin/bash"              9 minutes ago        Exited (0) About a minute ago              intelligent_banach
+e32056354ec5   fa262c3a6564   "docker-entrypoint.s…"   11 minutes ago       Exited (1) 11 minutes ago                  cranky_ramanujan
+b26c83c8efcd   6013ae1a63c2   "/bin/bash"              13 minutes ago       Exited (100) 11 minutes ago                clever_lalande
+973d219f4ab8   fa262c3a6564   "docker-entrypoint.s…"   13 minutes ago       Exited (1) 13 minutes ago                  stupefied_hugle
+ba070bffd95e   6013ae1a63c2   "/bin/bash"              About an hour ago    Exited (0) 52 minutes ago                  gallant_galileo
+daa230a97c92   ubuntu         "sh"                     About an hour ago    Exited (137) About an hour ago             mystifying_easley
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docler log 9695cb5e9f16
+bash: docler: command not found
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docler logs 9695cb5e9f16
+bash: docler: command not found
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker logs 9695cb5e9f16
+2025-03-20 07:18:33+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.2.0-1.el9 started.
+2025-03-20 07:18:33+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2025-03-20 07:18:33+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.2.0-1.el9 started.
+2025-03-20 07:18:33+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
+    You need to specify one of the following as an environment variable:
+    - MYSQL_ROOT_PASSWORD
+    - MYSQL_ALLOW_EMPTY_PASSWORD
+    - MYSQL_RANDOM_ROOT_PASSWORD
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -e MYSQL_ROOT_PASSWORD=1234 -d mysql
+290a29e7074ac55acc9460666a41fb89c6fc9f7a8b92f366e05b32ac77afc205
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED             STATUS                           PORTS                 NAMES
+290a29e7074a   mysql          "docker-entrypoint.s…"   46 seconds ago      Up 46 seconds                    3306/tcp, 33060/tcp   nervous_noyce
+9695cb5e9f16   mysql          "docker-entrypoint.s…"   5 minutes ago       Exited (1) 5 minutes ago                               vigilant_bose
+d0ccfddd14c6   ubu22:0.2      "/bin/bash"              14 minutes ago      Exited (0) 6 minutes ago                               intelligent_banach
+e32056354ec5   fa262c3a6564   "docker-entrypoint.s…"   15 minutes ago      Exited (1) 15 minutes ago                              cranky_ramanujan
+b26c83c8efcd   6013ae1a63c2   "/bin/bash"              18 minutes ago      Exited (100) 16 minutes ago                            clever_lalande
+973d219f4ab8   fa262c3a6564   "docker-entrypoint.s…"   18 minutes ago      Exited (1) 18 minutes ago                              stupefied_hugle
+ba070bffd95e   6013ae1a63c2   "/bin/bash"              About an hour ago   Exited (0) 57 minutes ago                              gallant_galileo
+daa230a97c92   ubuntu         "sh"                     About an hour ago   Exited (137) About an hour ago                         mystifying_easley
