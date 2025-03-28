@@ -1,0 +1,174 @@
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ вщслук зы -ф
+bash: вщслук: command not found
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ps -a
+CONTAINER ID   IMAGE           COMMAND                  CREATED      STATUS                    PORTS                                                  NAMES
+b7d709b7ea59   sql33:0.3       "sh"                     7 days ago   Exited (255) 6 days ago                                                          interesting_moore
+49ff5634479e   postgres        "docker-entrypoint.s…"   7 days ago   Exited (255) 6 days ago   5432/tcp                                               happy_buck
+43679501cf9f   postgres        "docker-entrypoint.s…"   7 days ago   Exited (0) 7 days ago                                                            laughing_mclaren
+651ce5883aba   postgres        "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            upbeat_clarke
+2b39f95bbd7f   postgres        "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            magical_mayer
+d180c3efbbce   postgres        "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            kind_montalcini
+79cc41b1867f   mysql           "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            gracious_feynman
+9e512b37c7f2   postgres        "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            competent_tu
+ca1b62ab5d15   postgres        "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            eager_beaver
+2112c19e1639   mysql           "docker-entrypoint.s…"   7 days ago   Exited (255) 6 days ago   3306/tcp, 33060/tcp                                    elated_fermat
+2db249648023   mysql           "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            suspicious_ramanujan
+af09a8ff8690   ubuntu:22.04    "/bin/bash"              7 days ago   Created                                                                          ub2204
+ff86b064843e   b2fcd079c1d4    "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            elastic_gould
+2ec9efcad827   postgres:13.3   "docker-entrypoint.s…"   7 days ago   Created                                                                          habr-pg-13.3
+d399883ac60a   postgres        "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            gallant_clarke
+d5a55fc38706   mysql           "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            ecstatic_murdock
+96d1272d0746   postgres        "docker-entrypoint.s…"   7 days ago   Exited (255) 7 days ago   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp              postgres-container
+a4d19501aba4   mysql           "docker-entrypoint.s…"   7 days ago   Exited (255) 7 days ago   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   mysql-container
+89d4626d198d   postgres        "docker-entrypoint.s…"   7 days ago   Exited (1) 7 days ago                                                            nifty_johnson
+290a29e7074a   mysql           "docker-entrypoint.s…"   8 days ago   Exited (255) 7 days ago   3306/tcp, 33060/tcp                                    nervous_noyce
+9695cb5e9f16   mysql           "docker-entrypoint.s…"   8 days ago   Exited (1) 8 days ago                                                            vigilant_bose
+d0ccfddd14c6   ubu22:0.2       "/bin/bash"              8 days ago   Exited (0) 8 days ago                                                            intelligent_banach
+e32056354ec5   fa262c3a6564    "docker-entrypoint.s…"   8 days ago   Exited (1) 8 days ago                                                            cranky_ramanujan
+b26c83c8efcd   6013ae1a63c2    "/bin/bash"              8 days ago   Exited (100) 8 days ago                                                          clever_lalande
+973d219f4ab8   fa262c3a6564    "docker-entrypoint.s…"   8 days ago   Exited (1) 8 days ago                                                            stupefied_hugle
+ba070bffd95e   6013ae1a63c2    "/bin/bash"              8 days ago   Exited (0) 8 days ago                                                            gallant_galileo
+daa230a97c92   ubuntu          "sh"                     8 days ago   Exited (137) 8 days ago                                                          mystifying_easley
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker stop php-phpmyadmin-1
+Error response from daemon: No such container: php-phpmyadmin-1
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ mkdir prg2
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ vim Dockerfile
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ vim index.php
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ vim index.php
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker build -t testphp:0.1 .
+[+] Building 11.1s (9/9) FINISHED                                                                                                                                                                     docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                                            0.0s
+ => => transferring dockerfile: 111B                                                                                                                                                                            0.0s
+ => [internal] load metadata for docker.io/library/php:7.2-apache                                                                                                                                               1.2s
+ => [auth] library/php:pull token for registry-1.docker.io                                                                                                                                                      0.0s
+ => [internal] load .dockerignore                                                                                                                                                                               0.0s
+ => => transferring context: 2B                                                                                                                                                                                 0.0s
+ => [1/3] FROM docker.io/library/php:7.2-apache@sha256:4dc0f0115acf8c2f0df69295ae822e49f5ad5fe849725847f15aa0e5802b55f8                                                                                         9.2s
+ => => resolve docker.io/library/php:7.2-apache@sha256:4dc0f0115acf8c2f0df69295ae822e49f5ad5fe849725847f15aa0e5802b55f8                                                                                         0.0s
+ => => sha256:25417b6c9c2e1a52b551ba89087f4d07c216f58784773c9e7a1710a1f6e2b4a1 3.24kB / 3.24kB                                                                                                                  0.0s
+ => => sha256:c61d277263e19d2ce30a6bae41115c811eb0f9274a601a5e3ee621e54c8a74f7 13.18kB / 13.18kB                                                                                                                0.0s
+ => => sha256:6ec7b7d162b24bd6df88abde89ceb6d7bbc2be927f025c9dd061af2b0c328cfe 27.10MB / 27.10MB                                                                                                                0.6s
+ => => sha256:4dc0f0115acf8c2f0df69295ae822e49f5ad5fe849725847f15aa0e5802b55f8 1.65kB / 1.65kB                                                                                                                  0.0s
+ => => sha256:db606474d60ce31604505c7d6dad9a66cb42f3818fca738832db2f2091cf89c9 225B / 225B                                                                                                                      0.1s
+ => => sha256:afb30f0cd8e0ff78b5eecdc2d9365a50441ad83c5db5f1e87942d6426237fa56 76.65MB / 76.65MB                                                                                                                1.2s
+ => => sha256:3bb2e805159413e5278b859f7fbb86ddfc99e667cb705d5d5aec0a7c8ffcf1b5 225B / 225B                                                                                                                      0.6s
+ => => extracting sha256:6ec7b7d162b24bd6df88abde89ceb6d7bbc2be927f025c9dd061af2b0c328cfe                                                                                                                       1.5s
+ => => sha256:c2199db96575122fd559c29b619a2773fe9069e0266312a6369ac95f4464b1dd 434B / 434B                                                                                                                      1.2s
+ => => sha256:4c761b44e2ccbff3f10b254b21bb00a52dfd26919ad9e3f7efcd569196e6c26b 18.68MB / 18.68MB                                                                                                                1.6s
+ => => sha256:fd07bbc59d347c16686f107676436a2281e4128033f105ca7a602aa195bcbe04 12.65MB / 12.65MB                                                                                                                1.8s
+ => => sha256:1b9a9381eea8f93068e8043f18ea59b709c07256e2f90962931a1433fbdf5e79 487B / 487B                                                                                                                      1.4s
+ => => sha256:72b73ab27698b55aa309173abd0cdd758291b9feaac31342c48ff12f3be14876 494B / 494B                                                                                                                      1.8s
+ => => sha256:983308f4f0d6304dc6cecde8fd66ba5a94a08873a3b8205eb5ff1ea98b419dbc 13.82MB / 13.82MB                                                                                                                1.9s
+ => => sha256:6c13f026e6da09e10ca2edb704b335a62bac29e549a2d0b35e535c9aa8dbeeba 2.27kB / 2.27kB                                                                                                                  2.1s
+ => => sha256:e5e6cd16368920e691da5b8791184d7a8d579dd5cd5e8c533ad2bf0b82c2d0fc 248B / 248B                                                                                                                      2.1s
+ => => sha256:5c5516e56582a30bd2e69c32d17a169ed7227900318e9d7b5949c8fb447308f5 210B / 210B                                                                                                                      2.1s
+ => => sha256:154729f6ba8609ef7d5af1bfad81efe814cbbca18509834908735c9aced174d3 897B / 897B                                                                                                                      2.2s
+ => => extracting sha256:db606474d60ce31604505c7d6dad9a66cb42f3818fca738832db2f2091cf89c9                                                                                                                       0.0s
+ => => extracting sha256:afb30f0cd8e0ff78b5eecdc2d9365a50441ad83c5db5f1e87942d6426237fa56                                                                                                                       2.0s
+ => => extracting sha256:3bb2e805159413e5278b859f7fbb86ddfc99e667cb705d5d5aec0a7c8ffcf1b5                                                                                                                       0.0s
+ => => extracting sha256:4c761b44e2ccbff3f10b254b21bb00a52dfd26919ad9e3f7efcd569196e6c26b                                                                                                                       0.4s
+ => => extracting sha256:c2199db96575122fd559c29b619a2773fe9069e0266312a6369ac95f4464b1dd                                                                                                                       0.0s
+ => => extracting sha256:1b9a9381eea8f93068e8043f18ea59b709c07256e2f90962931a1433fbdf5e79                                                                                                                       0.0s
+ => => extracting sha256:fd07bbc59d347c16686f107676436a2281e4128033f105ca7a602aa195bcbe04                                                                                                                       0.1s
+ => => extracting sha256:72b73ab27698b55aa309173abd0cdd758291b9feaac31342c48ff12f3be14876                                                                                                                       0.0s
+ => => extracting sha256:983308f4f0d6304dc6cecde8fd66ba5a94a08873a3b8205eb5ff1ea98b419dbc                                                                                                                       0.4s
+ => => extracting sha256:6c13f026e6da09e10ca2edb704b335a62bac29e549a2d0b35e535c9aa8dbeeba                                                                                                                       0.0s
+ => => extracting sha256:e5e6cd16368920e691da5b8791184d7a8d579dd5cd5e8c533ad2bf0b82c2d0fc                                                                                                                       0.0s
+ => => extracting sha256:5c5516e56582a30bd2e69c32d17a169ed7227900318e9d7b5949c8fb447308f5                                                                                                                       0.0s
+ => => extracting sha256:154729f6ba8609ef7d5af1bfad81efe814cbbca18509834908735c9aced174d3                                                                                                                       0.0s
+ => [internal] load build context                                                                                                                                                                               0.0s
+ => => transferring context: 529.75kB                                                                                                                                                                           0.0s
+ => [2/3] WORKDIR /var/www/html                                                                                                                                                                                 0.0s
+ => [3/3] COPY . /var/www/html                                                                                                                                                                                  0.0s
+ => exporting to image                                                                                                                                                                                          0.5s
+ => => exporting layers                                                                                                                                                                                         0.5s
+ => => writing image sha256:ad347618eb6e55664503406e3e2bbcc4862ef8680d41d7832b92546da49c5831                                                                                                                    0.0s
+ => => naming to docker.io/library/testphp:0.1                                                                                                                                                                  0.0s
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+testphp      0.1       ad347618eb6e   3 minutes ago   411MB
+sql33        0.3       43be4a66bb5f   7 days ago      78.1MB
+ubu22        0.2       c9f5760c4f11   8 days ago      202MB
+php          latest    cd0e124311ea   2 weeks ago     547MB
+postgres     latest    76e3e031d245   4 weeks ago     438MB
+mariadb      latest    a914eff5d2eb   6 weeks ago     336MB
+ubuntu       latest    a04dc4851cbc   2 months ago    78.1MB
+ubuntu       22.04     a24be041d957   2 months ago    77.9MB
+phpmyadmin   latest    052506f2de4d   2 months ago    570MB
+mysql        latest    fa262c3a6564   2 months ago    797MB
+ubuntu       20.04     6013ae1a63c2   5 months ago    72.8MB
+openjdk      latest    71260f256d19   2 years ago     470MB
+postgres     13.3      b2fcd079c1d4   3 years ago     315MB
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -d -p 8080:80 --name  phpapp testphp:0.1
+3f9f6e60ba452c99e075d8b81d332a7c552ca6cdede920b2deb32ea788bce674
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker stop phpapp
+phpapp
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker build -t testphp:0.2 .
+[+] Building 0.7s (9/9) FINISHED                                                                                                                                                                      docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                                            0.0s
+ => => transferring dockerfile: 111B                                                                                                                                                                            0.0s
+ => [internal] load metadata for docker.io/library/php:7.2-apache                                                                                                                                               0.6s
+ => [auth] library/php:pull token for registry-1.docker.io                                                                                                                                                      0.0s
+ => [internal] load .dockerignore                                                                                                                                                                               0.0s
+ => => transferring context: 2B                                                                                                                                                                                 0.0s
+ => [1/3] FROM docker.io/library/php:7.2-apache@sha256:4dc0f0115acf8c2f0df69295ae822e49f5ad5fe849725847f15aa0e5802b55f8                                                                                         0.0s
+ => [internal] load build context                                                                                                                                                                               0.0s
+ => => transferring context: 6.05kB                                                                                                                                                                             0.0s
+ => CACHED [2/3] WORKDIR /var/www/html                                                                                                                                                                          0.0s
+ => CACHED [3/3] COPY . /var/www/html                                                                                                                                                                           0.0s
+ => exporting to image                                                                                                                                                                                          0.0s
+ => => exporting layers                                                                                                                                                                                         0.0s
+ => => writing image sha256:ad347618eb6e55664503406e3e2bbcc4862ef8680d41d7832b92546da49c5831                                                                                                                    0.0s
+ => => naming to docker.io/library/testphp:0.2                                                                                                                                                                  0.0s
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -d -p 8080:80 --name  phpapp --rm testphp:0.2
+docker: Error response from daemon: Conflict. The container name "/phpapp" is already in use by container "3f9f6e60ba452c99e075d8b81d332a7c552ca6cdede920b2deb32ea788bce674". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker run -d -p 8080:80 --name  phpappp --rm testphp:0.2
+fbfd38d6d0a9e23fa534c86506d9bbc4eb33b6988709f9e98ce204ec08dad25e
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ docker version
+Client:
+ Version:           27.3.1-1
+ API version:       1.47
+ Go version:        go1.22.8
+ Git commit:        ce1223035ac3ab8922717092e63a184cf67b493d
+ Built:             Fri Sep 20 11:01:47 UTC 2024
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server:
+ Engine:
+  Version:          27.3.1-1
+  API version:      1.47 (minimum version 1.24)
+  Go version:       go1.22.8
+  Git commit:       41ca978a0a5400cc24b274137efa9f25517fcc0b
+  Built:            Wed Sep 18 10:25:38 2024
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.36-1
+  GitCommit:        88c3d9bc5b5a193f40b7c14fa996d23532d6f956
+ runc:
+  Version:          1.1.15-1
+  GitCommit:        bc20cb4497af9af01bea4a8044f1678ffca2745c
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ vim docker-compose.yml
+@RealFlubs ➜ /workspaces/mdk.02.01 (main) $ ls -1
+2025-02-28_15-56.png
+2025-02-28_15-57.png
+2025-02-28_15-57_1.png
+Dockerfile
+'dNS 2.0.pkt'
+docker-compose.yml
+index.php
+lab1.txt
+lab2.txt
+lab3.txt
+prg2
+'Отчет 13.03.2025'
+'лекция от 07.03.2025'
+отчет
+'отчет 2'
