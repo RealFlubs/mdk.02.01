@@ -1,17 +1,16 @@
 
-┌──(jack㉿kaali)-[~/mytest/Docker-compose/doc_net_test/mysql]
-└─$ ssh user@192.168.114.253
+
 The authenticity of host '192.168.114.253 (192.168.114.253)' can't be established.
 ED25519 key fingerprint is SHA256:tAosuBJHdySslT43Iliv9WwKRpxVJU/RW/AzHQsRwPU.
 
-Проверяем что диск рейда на месте 
-
-Смотрите https://ubuntu.com/esm или выполните: sudo pro status
 
 
-Last login: Fri May 23 02:17:08 2025 from 192.168.15.232
-user@user:~$ sudo fdisk -l
-[sudo] password for user: 
+ sudo pro status
+
+
+
+:~$ sudo fdisk -l
+[sudo] password for : 
 Disk /dev/sda: 50 GiB, 53687091200 bytes, 104857600 sectors
 Disk model: VBOX HARDDISK   
 Units: sectors of 1 * 512 = 512 bytes
@@ -88,26 +87,24 @@ Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 24 GiB, 25765609472 bytes, 50323456 sect
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
-user@user:~$ ls /media
+~$ ls /media
 RAID
-user@user:~$ ls /media/RAID
+:~$ ls /media/RAID
 123  etc  lost+found
-user@user:~$ cat /media/RAID/123
+~$ cat /media/RAID/123
 1234568 jdnhvx nbjkgvj
  04:46:48 up 51 min,  2 users,  load average: 0,07, 0,08, 0,03
 
-проверяем состояние рейда и перезогружаем сервер 
 
-user@user:~$ sudo cat /proc/mdstat
+~$ sudo cat /proc/mdstat
 Personalities : [raid1] [raid0] [raid6] [raid5] [raid4] [raid10] 
 md0 : active raid1 sdc1[0] sdd1[1]
       5235712 blocks super 1.2 [2/2] [UU]
       
 unused devices: <none>
-user@user:~$ poweroff
+:~$ poweroff
 
-посте перезогрузки, мы не можем нормально загрузиться, так как рейдд не работает 
-мы входим в безопасный режим, в котором нам надо выполнить следующие команды 
+
 
 nano /etc/fstab (коментируем монтирование рейда)
 mdadm --stop /dev/md0 (остановка рейда)
@@ -119,16 +116,11 @@ nano /etc/fstab (раскоментируем монтирование рейд�
 mount -a (проверяем что файлы на месте)
 poweroff
 
-перезогружаем и заходим в обычном режиме и проверяем состояние диска
-
-тобы просмотреть дополнительные обновления выполните: apt list --upgradable
-
-Включите ESM Apps для получения дополнительных будущих обновлений безопасности.
-Смотрите https://ubuntu.com/esm или выполните: sudo pro status
+ sudo pro status
 
 
 Last login: Thu May 29 02:39:57 2025 from 192.168.114.232
-user@user:~$ sudo lsblk -f
+~$ sudo lsblk -f
 [sudo] password for user: 
 NAME                      FSTYPE            FSVER    LABEL  UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
 sda                                                                                                               
@@ -146,7 +138,7 @@ sdc
     └─md0p1               ext4              1.0             d88f59a6-385a-4206-b7cd-e3dceb698782      4,6G     0% /media/RAID
 sdd                                                                                                               
 sr0                                                                                                               
-user@user:~$ sudo gdisk /dev/sdd
+~$ sudo gdisk /dev/sdd
 GPT fdisk (gdisk) version 1.0.10
 
 Partition table scan:
@@ -184,7 +176,7 @@ PARTITIONS!!
 Do you want to proceed? (Y/N): y
 OK; writing new GUID partition table (GPT) to /dev/sdd.
 The operation has completed successfully.
-user@user:~$ sudo lsblk -f
+~$ sudo lsblk -f
 NAME                      FSTYPE            FSVER    LABEL  UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
 sda                                                                                                               
 ├─sda1                                                                                                            
@@ -204,15 +196,15 @@ sdd
 sr0                                                                                                               
 
 
-заходим под root и добовляем новый диск к рейду 
+
 
 y
-root@user:/media/RAID# cp -rf /var/lib/docker /media/RAID
-root@user:/media/RAID# ls 
+:/media/RAID# cp -rf /var/lib/docker /media/RAID
+:/media/RAID# ls 
 123  docker  etc  lost+found  ttt
-root@user:/media/RAID# ls docker
+:/media/RAID# ls docker
 buildkit  containers  engine-id  image  network  overlay2  plugins  runtimes  swarm  tmp  volumes
-root@user:/media/RAID# lsblk -f
+:/media/RAID# lsblk -f
 NAME                      FSTYPE            FSVER    LABEL  UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
 sda                                                                                                               
 ├─sda1                                                                                                            
@@ -230,9 +222,9 @@ sdc
 sdd                                                                                                               
 └─sdd1                                                                                                            
 sr0                                                                                                               
-root@user:/media/RAID# mdadm /dev/md0 --add /dev/sdd1
+:/media/RAID# mdadm /dev/md0 --add /dev/sdd1
 mdadm: added /dev/sdd1
-root@user:/media/RAID# cat /proc/mdstat
+:/media/RAID# cat /proc/mdstat
 Personalities : [raid1] [raid0] [raid6] [raid5] [raid4] [raid10] 
 md0 : active raid1 sdd1[2] sdc1[1]
       5235712 blocks super 1.2 [2/1] [_U]
@@ -254,7 +246,7 @@ md0 : active raid1 sdd1[2] sdc1[1]
 unused devices: <none>
 root@user:/media/RAID# exit
 logout
-user@user:~$ cd /media/RAID
+:~$ cd /media/RAID
 user@user:/media/RAID$ ls -l
 total 28
 -rw-rw-r--   1 user user    86 мая 22 04:46 123
@@ -262,7 +254,7 @@ drwx--x---  12 root root  4096 мая 29 03:08 docker
 drwxr-xr-x 110 user user  4096 мая 22 05:08 etc
 drwx------   2 root root 16384 мая 22 04:39 lost+found
 -rw-r--r--   1 root root     0 мая 29 02:45 ttt
-user@user:/media/RAID$ blkid /dev/md0p1
+:/media/RAID$ blkid /dev/md0p1
 /dev/md0p1: UUID="d88f59a6-385a-4206-b7cd-e3dceb698782" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="Linux filesystem" PARTUUID="9bba1883-95e2-49b4-865d-f1f722861ee9"
 user@user:/media/RAID$ sudo fdisk -l
 [sudo] password for user: 
@@ -333,4 +325,4 @@ Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 24 GiB, 25765609472 bytes, 50323456 sect
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
-user@user:/media/RAID$ 
+
